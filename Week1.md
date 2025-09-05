@@ -68,8 +68,9 @@ Why 표본조사? 경제적, 시간적으로 유리
 분산: 주어진 데이터포인트에 대한 예측모델의 가변성
 ---> trade-off relationship
 
-<img width="636" height="408" alt="image" src="https://github.com/user-attachments/assets/2cd9b95d-9cf1-4c33-975b-d318897ec23a" />
+<img width="500" height="300" alt="image" src="https://github.com/user-attachments/assets/2cd9b95d-9cf1-4c33-975b-d318897ec23a" />
 
+이상: 분산과 편향 모두 최소화
 
 
 ## 03. 변수와 척도
