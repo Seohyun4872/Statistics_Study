@@ -103,6 +103,19 @@ DW(Data Warehouse): 데이터 창고, 수집된 데이터를 사용자 관점에
 DM(Data Mart): 사용자 목적에 맞도록 가공된 일부의 데이터 저장  
 ETL: Extract(추출)+Transform(변환)+Load(불러내기), 저장된 데이터를 사용자가 요구하는 포맷으로 변형해 이동시키는 작업 과정  
 
+**레프트조인과 라이트조인**  
+<img width="767" height="265" alt="image" src="https://github.com/user-attachments/assets/57f7a61d-aa9d-429b-9deb-4d1bb533b45c" />  
+하나의 테이블을 기준으로 다른 테이블에서 겹치는 부분을 결합해주는 것  
+그렇기에 기준이 되는 테이블의 데이터는 그대로 유지하면서 조인하는 테이블의 데이터만 추가  
+
+**이너조인과 풀조인** 
+<img width="700" height="190" alt="image" src="https://github.com/user-attachments/assets/16dd454f-7000-4c72-a7a3-9c4066792e7a" />  
+이너조인은 두 테이블 간 겹치는 부분의 행만 가져오는 조인 방법  
+풀 조인은 이와 반대로 모든 행을 살리는 조인 방법  
+
+**크로스조인**
+<img width="600" height="542" alt="image" src="https://github.com/user-attachments/assets/9ca81de6-b328-4d18-baf4-40f75ec706ed" />  
+값이 업더라도 크로스로 모든 행이 생기도록 만드는 것
 
 <br>
 <br>
@@ -156,7 +169,7 @@ ETL: Extract(추출)+Transform(변환)+Load(불러내기), 저장된 데이터�
 | 1009       | 노동희     | 차장    | 10         | 인사팀     | 서울         |
 
 ```
-여기에 답을 작성해주세요!
+레프트조인
 ```
 
 
@@ -175,7 +188,7 @@ ETL: Extract(추출)+Transform(변환)+Load(불러내기), 저장된 데이터�
 | 1009       | 노동희     | 차장    | 10         | 인사팀     | 서울         |
 
 ```
-여기에 답을 작성해주세요!
+이너조인인
 ```
 
 
@@ -195,7 +208,7 @@ ETL: Extract(추출)+Transform(변환)+Load(불러내기), 저장된 데이터�
 |            |            |         | 50         | 법무팀     | 인천         |
 
 ```
-여기에 답을 작성해주세요!
+라이트조인
 ```
 
 
