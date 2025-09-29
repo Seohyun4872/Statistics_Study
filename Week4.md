@@ -196,6 +196,7 @@ sns.stripplot(x="hotel", y="lead_time", data=df, size=1)
 <img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/3b749ecd-8eff-49b2-b253-e77e68c3d8a2" />
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/39e0dbdf-9e37-423d-b102-3bc34a01e42f" />
 <img width="600" height="400" alt="image" src="https://github.com/user-attachments/assets/a3d37a54-1b5e-4a0f-b829-acf478f6ef64" />
+<img width="687" height="698" alt="image" src="https://github.com/user-attachments/assets/726dffd7-fbd6-4319-922e-bf92fcd612a3" />
 
 
 
