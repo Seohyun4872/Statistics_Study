@@ -54,9 +54,129 @@
 ```
 
 <!-- 새롭게 배운 내용을 자유롭게 정리해주세요.-->
+**시각화 종류**
+- 비교 시각화
+- 분포 시각화
+- 관계 시각화
+- 공간 시각화
+
+**10.1 탐색적 데이터 분석(EDA)**
+~~~
+#데이터 샘플 확인
+df.head()
+#각 칼럼별 속성 및 결측치 확인
+df.info()
+df.isnull().sum()
+#각 칼럼의 통계치 확인
+df.describe()
+~~~
+~~~
+#각 수치형 컬럼별 왜도 확인
+# Select only numerical columns
+df_numeric = df.select_dtypes(include=['number'])
+skewness = df_numeric.skew()
+
+# Display the skewness
+print("Skewness of numerical columns:")
+print(skewness)
+>> 왜도를 통해 분포의 비대칭성과 이상치를 확인 가능
+~~~
+~~~
+# 각 칼럼의 첨도 확인
+# Select only numerical columns and calculate kurtosis
+kurtosis = df_numeric.kurtosis()
+
+# Display the kurtosis
+print("Kurtosis of numerical columns:")
+print(kurtosis)
+>> 첨도를 통해 분포의 뾰족함 정도와 데이터의 극단값이 많은지 적은지 확인가능
+~~~
+~~~
+**시각화**
+sns.displot(df['lead_time'])
+#lead_time은 예약 날짜부터 투숙 날짜까지의 일수 차이 의미 
+#호텔 구분에 따른 lead_time 분포 차이 시각화
+sns.violinplot(x="hotel", y="lead_time", data=df, inner=None, color=".8")
+sns.stripplot(x="hotel", y="lead_time", data=df, size=1)
+~~~
+
+**10.2 공분산과 상관성 분석**
+공분산: 두 분산의 관계 - 변수 각 값의 편차들을 서로 곱한 값을 모두 더하고 (n-1)로 나눔  
+상관계수: 공분산을 통해 나타내지 못했던 상관성의 정도를 나타냄  
+~~~
+**등간, 비율척도 데이터에서의 상관계수**
+- 피어슨상관계수: X1,X2가 함께 변하는 정도(공분산)/ X1,X2가 변하는 전체 정도
+- 산점도랑 함께 보면 명확함, 보통 프로그램에서 히트맵이나 상관분석 표로 확
+- 해당 상관계수를 제곱한 값: 결정계수(회귀분석)
+~~~
+~~~
+**서열척도, 명목척도 간의 상관관계 분석**
+<img width="796" height="315" alt="image" src="https://github.com/user-attachments/assets/8b74618d-33e4-4a2f-a0cd-670ca0eb417c" />
+~~~
+
+**10.3 시간 시각화**
+선그래프(연속형): 시간간격의 밀도가 높을 때 사용  
+- 이동평균 방법: 데이터의 연속적 그룹의 평균 구하기   
+막대그래프(분절형): 시간의 밀도가 낮은 경우 사용(ex: 1년 동안의 월 간격 단위흐름)  
+- 막대그래프, 누적막대, 점 그래프
+
+**10.4 비교시각화**
+그룹별 요소가 많아지게되면 더욱 효율적인 표현 기법이 필요함  
+* 히트맵 차트 활용
+- 하나의 변수(그룹) * N개의 각 변수에 해당하는 값들(수치형)
+* 방사형차트(Radar chart)
+- 하나의 그룹별 각 변수에 대한 값: 하나의 차트에 하나의 그룹을 시각화할 수도 있고 아래처럼 하나의 차트에 모든 그룹을 합쳐서 시각화할 수도 있다. 
+<img width="866" height="609" alt="image" src="https://github.com/user-attachments/assets/44f35f17-1b3d-4c45-bc0c-e2e3fa88e8d7" />
+* 평행 좌표 그래프(Parallel coordinates)
+
+**10.5 분포시각화**
+변수들이 어떤 요소로 어느정도의 비율로 구성되어 있는지를 확인하는 단계  
+- 연속형(양적척도): 막대, 선 그래프, 히스토그램
+  *히스토그램은 처음 20개 정도의 구간으로 나눈 뒤 조금씩 구간의 개수를 줄여가며 조정
+- 명목형(질적척도): 파이차트, 도넛차트 사용 - 분포 정도를 면적으로 표현
+또는 트리맵 차트(위계구조 표현 가능), 와플차트(위계구조 표현 X)등을 사용 가능
+<img width="1066" height="349" alt="image" src="https://github.com/user-attachments/assets/23406ef0-0313-4bc1-8f49-5c124a558e1b" />
+
+**10.6 관계 시각화**
+~~~
+**산점도**
+- 두 개의 연속형 변수 간 관계를 나타낼 수 있는 것 
+- 산점도는 극단치를 제거하고 그리는 것이 효율적임.
+- 데이터가 많아 점들이 겹칠 경우, 점들의 투명도를 낮춰 밀도를 함께 표현
+~~~
+~~~
+**버블차트**
+- 3가지 요소의 상관관계 표현 가능(버블의 크기까지)
+- 관측치가 너무 많게 되면 오히려 정보전달 효율이 떨어짐
+~~~
+
+**10.7 공간시각화**
+데이터가 지리적 위치와 관련 있으면 실제 지도 위에 데이터를 표현하는 것이 효과적  
+1) 도트맵(Dot Map): 지리적 위치에 동일한 크기의 작은 점을 찍어 해당 지역의 데이터분포나 패턴 표현
+<img width="520" height="316" alt="image" src="https://github.com/user-attachments/assets/1ca910f1-5c44-4cd9-b737-193b3996df05" />
+
+- 시각적인 개요를 파악하는 덴 유리, but 정확한 값을 전달하는덴 적합X
+
+ 2) 버블맵(Bubble map): 버블차트를 지도에 그대로 옮겨 둔 것
+<img width="520" height="316" alt="image" src="https://github.com/user-attachments/assets/54c92565-f60d-45c0-8cb5-ad754ab2d25a" />
+
+3) 코로플레스맵(Choropleth map): 단계구분도, 데이터 값의 크기에 따라 색상의 음영을 달리해 해당 지역에 대한 값을 시각화
+<img width="532" height="295" alt="image" src="https://github.com/user-attachments/assets/ce7be254-12fe-4c01-a8f3-d13d7f6cb56e" />
+
+4) 커넥션맵(Connection map)= 링크맵(link map): 지도에 찍힌 점들을 곡선이나 직선으로 연결해 지리적 관계를 표현, 연속적 연결을 통해 지도에 경로 표현 또한 가능
+<img width="530" height="284" alt="image" src="https://github.com/user-attachments/assets/088a611f-2fb2-486f-b718-904a903d4281" />
+
+- 지리적 관계의 패턴을 파악하기 위해 주로 사용함. (ex: 지역 간 무역, 항공경로 등)
+
++) 플로우맵, 카토그램 등 
+
+**10.8 박스플롯**
+하나의 그림으로 양적 척도 데이터의 분포 및 편향성, 평균, 중앙값 등 다양한 수치를 보기 쉽게 정리해줌  <img width="626" height="414" alt="image" src="https://github.com/user-attachments/assets/2524460c-f700-4290-9162-c0851abe8a3b" />
 
 
 
+
+ 
 <br>
 <br>
 
