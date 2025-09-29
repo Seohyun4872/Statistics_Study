@@ -109,10 +109,10 @@ sns.stripplot(x="hotel", y="lead_time", data=df, size=1)
 - 산점도랑 함께 보면 명확함, 보통 프로그램에서 히트맵이나 상관분석 표로 확
 - 해당 상관계수를 제곱한 값: 결정계수(회귀분석)
 ~~~
-~~~
+
 **서열척도, 명목척도 간의 상관관계 분석**
 <img width="796" height="315" alt="image" src="https://github.com/user-attachments/assets/8b74618d-33e4-4a2f-a0cd-670ca0eb417c" />
-~~~
+
 
 **10.3 시간 시각화**
 선그래프(연속형): 시간간격의 밀도가 높을 때 사용  
