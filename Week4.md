@@ -188,7 +188,16 @@ sns.stripplot(x="hotel", y="lead_time", data=df, size=1)
 >
 > > **인증 예시 : 통계 프로그램 결과, 시각화 이미지 캡처 등**
 
-<!-- 이 주석을 지우고 “실습 결과 화면(캡처)을 이곳에 첨부해주세요.-->
+<!-- 
+<img width="1015" height="1150" alt="image" src="https://github.com/user-attachments/assets/8f9daf21-8446-4454-a0c4-d0138ce8c2a1" />
+<img width="1000" height="700" alt="image" src="https://github.com/user-attachments/assets/ecfa64d9-d8af-427a-8875-5708314769de" />
+<img width="2000" height="900" alt="image" src="https://github.com/user-attachments/assets/6e8a711c-061b-4adc-b4c8-8ceb385f2ae7" />
+<img width="1581" height="1198" alt="image" src="https://github.com/user-attachments/assets/8bfd366c-ee57-4c75-956b-2bdd965e1601" />
+<img width="1000" height="600" alt="image" src="https://github.com/user-attachments/assets/3b749ecd-8eff-49b2-b253-e77e68c3d8a2" />
+<img width="1273" height="994" alt="image" src="https://github.com/user-attachments/assets/39e0dbdf-9e37-423d-b102-3bc34a01e42f" />
+<img width="1092" height="929" alt="image" src="https://github.com/user-attachments/assets/a3d37a54-1b5e-4a0f-b829-acf478f6ef64" />
+
+-->
 
 ~~~
 인증 이미지가 없으면 과제 수행으로 인정되지 않습니다.
