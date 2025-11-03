@@ -91,7 +91,13 @@
 >
 > > **인증 예시 : 통계 프로그램 결과, 시각화 이미지 캡처 등**
 
-<!-- 이 주석을 지우고 “실습 결과 화면(캡처)을 이곳에 첨부해주세요.-->
+<img width="100" height="600" alt="image" src="https://github.com/user-attachments/assets/0b9dcd88-9965-46a5-9d90-5e0843efe9f9" />
+<img width="500" height="200" alt="image" src="https://github.com/user-attachments/assets/fc3948b2-aaf3-45e4-a701-c42497d29386" />
+<img width="636" height="636" alt="image" src="https://github.com/user-attachments/assets/fc10ae0f-5580-4913-8061-ddec894a62f2" />
+<img width="500" height="150" alt="image" src="https://github.com/user-attachments/assets/7306d245-7d2d-4c7e-b286-34ed9b26300f" />
+<img width="1000" height="400" alt="image" src="https://github.com/user-attachments/assets/395cb3f7-6760-436a-8a9f-d0f857a3085c" />
+<img width="1000" height="500" alt="image" src="https://github.com/user-attachments/assets/e5684a4d-a6a2-4582-9b82-73ea78189245" />
+
 
 ~~~
 인증 이미지가 없으면 과제 수행으로 인정되지 않습니다.
